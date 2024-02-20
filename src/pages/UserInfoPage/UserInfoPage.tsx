@@ -1,8 +1,9 @@
 import { USERS } from "../../data";
 import "./UserInfoPage.css";
-import { IUserInfoPageProps } from "./interfaces";
+import {useParams} from "react-router-dom";
 
-export function UserInfoPage({ userId }: IUserInfoPageProps) {
+export function UserInfoPage() {
+	const { userId } = useParams();
 	const user = USERS[Number(userId)];
 
 	if (!user) {
