@@ -1,6 +1,6 @@
 import "./app.css";
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
-import {MainPage, UserInfoPage, UsersPage} from "./pages";
+import {MainPage, UserInfoPage, UsersPage, PlayListsPage, PlayListInfoPage} from "./pages";
 
 export function App() {
 	return (
@@ -11,6 +11,7 @@ export function App() {
 				<nav className="navMenu">
 					<Link to={"/"}>Главная</Link>
 					<Link to={"/users"}>Пользователи</Link>
+					<Link to={"/playlists"}>Плейлисты</Link>
 				</nav>
 
 				<main className="content">
@@ -18,6 +19,8 @@ export function App() {
 						<Route path='/' element={<MainPage />} />
 						<Route path='/users' element={<UsersPage />} />
 						<Route path='/users/:userId' element={<UserInfoPage />} />
+						<Route path='/playlists' element={<PlayListsPage />} />
+						<Route path='/playlists/:playlistId' element={<PlayListInfoPage />} />
 					</Routes>
 				</main>
 			</div>
