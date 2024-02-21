@@ -1,0 +1,15 @@
+.playListInfoPage {
+    color: darkcyan;
+}
+.playListDescription {
+    padding-bottom: 15px;
+    border-bottom: 1px solid whitesmoke;
+}
+.playListDescription a {
+    color: cornflowerblue;
+    cursor: pointer;
+}
+
+.playListDescription a:hover {
+    color: rgb(72, 111, 184);
+}
