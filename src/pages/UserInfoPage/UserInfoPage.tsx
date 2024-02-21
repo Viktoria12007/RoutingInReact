@@ -1,6 +1,6 @@
 import { USERS } from "../../data";
 import "./UserInfoPage.css";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 export function UserInfoPage() {
 	const { userId } = useParams();
@@ -29,6 +29,15 @@ export function UserInfoPage() {
 				<p>{user.fullName}</p>
 				<p>{user.bio}</p>
 			</div>
+
+			{ user.playlist &&
+				<div className="userPlayList">
+					<span>playlist: </span>
+					<Link to={`/playlists/${user.playlist.id}`}>
+						{user.playlist.name}
+					</Link>
+				</div>
+			}
 		</div>
 	);
 }
