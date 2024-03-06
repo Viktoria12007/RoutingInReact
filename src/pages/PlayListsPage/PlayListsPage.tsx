@@ -40,7 +40,7 @@ export function PlayListsPage () {
                 </label>
 
                 {filteredPlayLists.map(({ id, name }) => (
-                    <Link to={`/playlists/${id}`} key={id}>
+                    <Link data-testid="PlayList" to={`/playlists/${id}`} key={id}>
                         {name}
                     </Link>
                 ))}
