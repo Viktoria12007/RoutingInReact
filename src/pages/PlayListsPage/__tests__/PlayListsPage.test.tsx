@@ -14,11 +14,13 @@ const renderComponent = (props: any = {}) => {
 }
 
 describe('Тест компонента PlayListsPage', () => {
-    test('Тест, проверяющий вызов метода setSearchParam из react-router-dom при вводе жанра и названия',async () => {
+    test('Тест, проверяющий вызов метода setSearchParam из react-router-dom при вводе жанра и названия', () => {
         const { getByLabelText } = renderComponent();
+        let playLists = screen.getAllByTestId('PlayList');
+        expect(playLists.length).toBe(16);
         fireEvent.input(getByLabelText('введите жанр'), {target: {value: 'electronic'}});
         fireEvent.input(getByLabelText('введите название'), {target: {value: 'just'}});
-        const users = await screen.findAllByTestId('PlayList');
-        expect(users.length).toBe(1);
+        playLists = screen.getAllByTestId('PlayList');
+        expect(playLists.length).toBe(1);
     });
 });
