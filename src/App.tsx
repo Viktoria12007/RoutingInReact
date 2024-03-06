@@ -1,6 +1,6 @@
 import "./app.css";
-import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
-import {MainPage, UserInfoPage, UsersPage, PlayListsPage, PlayListInfoPage} from "./pages";
+import {BrowserRouter, Link} from "react-router-dom";
+import {AppRouter} from "./router/AppRouter";
 
 export function App() {
 	return (
@@ -15,13 +15,7 @@ export function App() {
 				</nav>
 
 				<main className="content">
-					<Routes>
-						<Route path='/' element={<MainPage />} />
-						<Route path='/users' element={<UsersPage />} />
-						<Route path='/users/:userId' element={<UserInfoPage />} />
-						<Route path='/playlists' element={<PlayListsPage />} />
-						<Route path='/playlists/:playlistId' element={<PlayListInfoPage />} />
-					</Routes>
+					<AppRouter />
 				</main>
 			</div>
 

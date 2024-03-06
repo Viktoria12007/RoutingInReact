@@ -1,17 +1,10 @@
 import '@testing-library/jest-dom';
 import {render} from "@testing-library/react";
-import {UserInfoPage} from "../UserInfoPage";
-import {MemoryRouter, Route, Routes} from "react-router-dom";
 import {USERS} from "../../../data";
+import {renderWithRouter} from "../../../tests/helpers/renderWithRouter";
 
-const renderComponent = (userId: number, props: any = {}) => {
-    return render(
-        <MemoryRouter initialEntries={[`/users/${userId}`]}>
-            <Routes>
-                <Route path='/users/:userId' element={<UserInfoPage {...props} />} />
-            </Routes>
-        </MemoryRouter>
-    );
+const renderComponent = (userId: number) => {
+    return render(renderWithRouter(`/users/${userId}`));
 }
 
 describe('Тест компонента UserInfoPage', () => {

@@ -1,15 +1,10 @@
 import '@testing-library/jest-dom';
 import {render} from "@testing-library/react";
-import {PlayListInfoPage} from "../PlayListInfoPage";
-import {MemoryRouter, Route, Routes} from "react-router-dom";
 import {PLAYLISTS} from "../../../data";
+import {renderWithRouter} from "../../../tests/helpers/renderWithRouter";
 
-const renderComponent = (playlistId: number, props: any = {}) => {
-    return render(<MemoryRouter initialEntries={[`/playlists/${playlistId}`]}>
-                    <Routes>
-                        <Route path='/playlists/:playlistId' element={<PlayListInfoPage {...props} />} />
-                    </Routes>
-                  </MemoryRouter>)
+const renderComponent = (playlistId: number) => {
+    return render(renderWithRouter(`/playlists/${playlistId}`));
 }
 
 describe('Тест компонента PlayListInfoPage', () => {
