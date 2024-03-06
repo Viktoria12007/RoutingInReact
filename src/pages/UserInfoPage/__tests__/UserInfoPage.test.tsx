@@ -1,10 +1,9 @@
 import '@testing-library/jest-dom';
-import {render} from "@testing-library/react";
 import {USERS} from "../../../data";
 import {renderWithRouter} from "../../../tests/helpers/renderWithRouter";
 
 const renderComponent = (userId: number) => {
-    return render(renderWithRouter(`/users/${userId}`));
+    return renderWithRouter(`/users/${userId}`);
 }
 
 describe('Тест компонента UserInfoPage', () => {

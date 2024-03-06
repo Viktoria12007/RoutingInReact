@@ -1,10 +1,9 @@
 import '@testing-library/jest-dom';
-import {render} from "@testing-library/react";
 import {PLAYLISTS} from "../../../data";
 import {renderWithRouter} from "../../../tests/helpers/renderWithRouter";
 
 const renderComponent = (playlistId: number) => {
-    return render(renderWithRouter(`/playlists/${playlistId}`));
+    return renderWithRouter(`/playlists/${playlistId}`);
 }
 
 describe('Тест компонента PlayListInfoPage', () => {
