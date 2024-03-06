@@ -30,7 +30,7 @@ export function UsersPage() {
 				</label>
 
 				{filteredUsers.map(({ id, fullName }) => (
-					<Link to={`/users/${id}`} key={id}>
+					<Link data-testid="User" to={`/users/${id}`} key={id}>
 						{fullName}
 					</Link>
 				))}
