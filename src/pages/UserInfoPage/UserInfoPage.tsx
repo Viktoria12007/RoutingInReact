@@ -12,7 +12,7 @@ export function UserInfoPage() {
 				<h2>UserInfoPage</h2>
 
 				<div className="users">
-					<p>Пользоатвеля с таким ИД нет</p>
+					<p data-testid="EmptyUser">Пользоатвеля с таким ИД нет</p>
 				</div>
 			</div>
 		);
@@ -24,16 +24,16 @@ export function UserInfoPage() {
 
 			<div className="users">
 				<p>{user.jobTitle}</p>
-				<p>{user.email}</p>
+				<p data-testid="Email">{user.email}</p>
 				<img src={user.avatar} alt="" width={200} height={200} />
-				<p>{user.fullName}</p>
+				<p data-testid="Name">{user.fullName}</p>
 				<p>{user.bio}</p>
 			</div>
 
 			{ user.playlist &&
 				<div className="userPlayList">
 					<span>playlist: </span>
-					<Link to={`/playlists/${user.playlist.id}`}>
+					<Link data-testid="Link" to={`/playlists/${user.playlist.id}`}>
 						{user.playlist.name}
 					</Link>
 				</div>
